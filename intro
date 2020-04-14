@@ -1,0 +1,51 @@
+# this code places a beeper in spots around the edge of a rectangular shape
+from karel.stanfordkarel import *
+
+def main():
+   # your code here...
+   populate()
+
+def check_spot():
+   if front_is_blocked():
+      turn_left()
+      
+def populate():
+      while no_beepers_present():
+         put_beeper()
+         move()
+         check_spot()
+ 
+ 
+# THIS IS THE BONUS KAREL ASSIGNMENT - NOT EFFICIENT BUT WORKS!
+# This is an editor! An editor is where you write code.
+# Make karel: move, turn_left, move
+def main():
+   move()
+   turn_left()
+   move()
+   # add your code here
+   populate()
+
+def check_spot():
+   if front_is_blocked():
+      step_back()
+      turn_left()
+      
+
+def step_back():
+   turn_right()
+   move()
+   turn_right()
+   move()
+
+def turn_right():
+   turn_left()
+   turn_left()
+   turn_left()
+   
+   
+def populate():
+      while no_beepers_present():
+         put_beeper()
+         move()
+         check_spot()
